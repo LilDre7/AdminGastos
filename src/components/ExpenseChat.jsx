@@ -1,37 +1,49 @@
-import React from "react";
 import { VictoryPie, VictoryLabel } from "victory";
 import { useGlobalState } from "../context/GlobalContext";
+// import { BsPieChartFill } from "react-icons/bs";
 
-const ExpenseChat = () => {
+function ExpenseChat() {
   const { transactions } = useGlobalState();
 
-  const total = transactions.reduce(
-    (acc, transaction) => (acc += transaction.amount),
-    0
-  );
-
-  const totalIncome = transactions
+  const totalIncomes = transactions
     .filter((transaction) => transaction.amount > 0)
     .reduce((acc, transaction) => (acc += transaction.amount), 0);
 
-  const totalExpense =
+  const totalExpenses =
     transactions
       .filter((transaction) => transaction.amount < 0)
       .reduce((acc, transaction) => (acc += transaction.amount), 0) * -1;
 
-  const totalExpensePercent = Math.round((totalExpense / totalIncome) * 100);
+  console.log({
+    totalIncomes,
+    totalExpenses,
+  });
+
+  const expensesPercentage = Math.round((totalExpenses / totalIncomes) * 100);
+  const incomesPercentage = 100 - expensesPercentage;
+
+  if (totalIncomes === 0 && totalExpenses === 0) {
+    return (
+      <div className="bg-zinc-900 p-4 my-2">
+        <div className="h-full flex items-center justify-center w-full flex-col">
+          <h1 className="text-3xl font-bold my-2">No data yet</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div>
+    <div className="bg-zinc-950">
       <VictoryPie
-        colorScale={["tomato", "orange"]}
+        colorScale={["#e74c3c", "#2ecc71"]}
         data={[
-          { x: "Expenses", y: 35 },
-          { x: "Income", y: 40 },
+          { x: "Expenses", y: expensesPercentage },
+          { x: "Incomes", y: incomesPercentage },
         ]}
-        animate={{ duration: 2000 }}
-        innerRadius={50}
-        labels={({ datum }) => `${datum.x}: ${datum.y}`}
+        animate={{
+          duration: 2000,
+        }}
+        labels={({ datum }) => datum.y}
         labelComponent={
           <VictoryLabel
             angle={45}
@@ -43,6 +55,6 @@ const ExpenseChat = () => {
       />
     </div>
   );
-};
+}
 
 export default ExpenseChat;

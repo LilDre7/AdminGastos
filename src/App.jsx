@@ -20,7 +20,7 @@ function App() {
       <GlobalProvider>
         <div className="bg-zinc-950 text-white h-screen flex justify-center items-center">
           <div className="container mx-auto w-3/6 ">
-            <div className="bg-zinc-800 p-10 rounded-md flex gap-x-2 ">
+            <div className="bg-zinc-800 p-10 rounded-md flex gap-x-6 ">
               <div className="">
                 {/* <Header /> */}
                 <h1 className="text-4xl font-bold mb-3 text-white bg-zinc-800 pb-2 rounded-md shadow-md shadow-zinc-800/50  ">

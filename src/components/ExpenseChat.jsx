@@ -36,7 +36,7 @@ function ExpenseChat() {
   }
 
   return (
-    <div className="">
+    <div className="scroll-m-24">
       <VictoryPie
         colorScale={["#e74c3c", "#2ecc71"]}
         data={[
@@ -51,7 +51,7 @@ function ExpenseChat() {
           <VictoryLabel
             angle={45}
             style={{
-              fill: "white",
+              fill: "black",
             }}
           />
         }

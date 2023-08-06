@@ -1,20 +1,26 @@
 import React from "react";
 import { useState } from "react";
+import JSConfetti from "js-confetti";
 
 const Menu = () => {
   // Hacer un menu responsive
   const [isNavbar, setNavbar] = useState(false);
 
+  const jsConfetti = new JSConfetti();
+
   const handleClick = () => {
     setNavbar(!isNavbar);
     console.log(isNavbar);
+    jsConfetti.addConfetti({
+      emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
+    });
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[60px] sm:mx-auto bg-[#f4ede400] opacity-[10px] transition-all duration-200 ease-in-out p-2 ">
+    <div className="fixed top-0 left-0 w-full h-[60px] sm:mx-auto bg-[#0b0b0bf8] opacity-[10px] transition-all duration-200 ease-in-out p-2 z-50 ">
       <i
         onClick={handleClick}
-        className="bx bx-menu md:hidden cursor-pointer z-50 bg-slate-400/25 p-2 rounded-[3px] text-xl"
+        className="bx bx-menu md:hidden cursor-pointer z-50 bg-white p-2 rounded-[3px] text-xl"
       ></i>
       <nav
         className={`text-white absolute top-full z-50 ${

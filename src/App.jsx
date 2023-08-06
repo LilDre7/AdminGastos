@@ -1,6 +1,8 @@
 // ** Importaciones de estilos ** //
 import "./App.css";
 
+import JSConfetti from "js-confetti";
+
 // ** Importaciones de componentes ** //
 import Header from "./components/Header";
 import Balance from "./components/Balance";
@@ -16,6 +18,12 @@ import ExpenseChat from "./components/ExpenseChat";
 import Menu from "./components/Menu";
 
 function App() {
+  const jsConfetti = new JSConfetti();
+
+  jsConfetti.addConfetti({
+    emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
+  });
+
   return (
     <>
       <GlobalProvider>
@@ -25,7 +33,7 @@ function App() {
               <div className="">
                 <Menu />
                 {/* <Header /> */}
-                <h1 className="p-3 text-2xl font-bold text-center text-gray-700 bg-white rounded-lg shadow-md ">
+                <h1 className="text-2xl font-bold text-center text-gray-700 bg-white rounded-lg shadow-md ">
                   Expense Tracker
                 </h1>
                 <IncomeExpenses />

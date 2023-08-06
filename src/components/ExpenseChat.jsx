@@ -36,7 +36,7 @@ function ExpenseChat() {
   }
 
   return (
-    <div className="scroll-m-24">
+    <div className="">
       <VictoryPie
         colorScale={["#e74c3c", "#2ecc71"]}
         data={[

@@ -18,10 +18,13 @@ const Menu = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-[60px] sm:mx-auto bg-[#0b0b0bf8] opacity-[10px] transition-all duration-200 ease-in-out p-2 z-50 ">
-      <i
+      <p className="text-white absolute left-[8.9rem]  translate-y-1">
+        <i className="bx bxs-face-mask text-3xl "></i>
+      </p>
+      <button
         onClick={handleClick}
-        className="bx bx-menu md:hidden cursor-pointer z-50 bg-white p-2 rounded-[3px] text-xl"
-      ></i>
+        className="bx bx-menu md:hidden cursor-pointer z-50 text-white rounded-[3px] text-4xl"
+      ></button>
       <nav
         className={`text-white absolute top-full z-50 ${
           isNavbar ? "left-0 z-50 min-h-screen dark:text-white" : "-left-full"

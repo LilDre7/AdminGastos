@@ -41,12 +41,13 @@ function App() {
                 <TransactionForm />
               </div>
               <div className="">
-                <ExpenseChat />
                 <TransactionList />
+                <ExpenseChat />
               </div>
             </div>
           </div>
         </div>
+        <Header />
       </GlobalProvider>
     </>
   );

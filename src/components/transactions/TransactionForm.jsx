@@ -30,14 +30,14 @@ const TransactionForm = () => {
           type="text"
           placeholder="Enter a Description"
           onChange={handleDescription}
-          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
+          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full outline-none"
         />
         <input
           type="number"
           placeholder="Enter a amount"
           step={0.01}
           onChange={handleAmount}
-          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
+          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full outline-none"
         />
         <button className="bg-indigo-700 text-white px-3 py-2 rounded-lg block w-full mb-2 hover:bg-indigo-800 transition-all duration-300 ease-in-out">
           Add Transaction

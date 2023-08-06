@@ -24,9 +24,12 @@ function ExpenseChat() {
 
   if (totalIncomes === 0 && totalExpenses === 0) {
     return (
-      <div className="p-4 my-2">
-        <div className="h-full flex items-center justify-center w-full flex-col">
-          <h1 className="text-3xl font-bold my-2">No data yet</h1>
+      <div className="flex justify-center p-3 bg-black m-3 text-white border-4 border-red-500 rounded-md">
+        <div className="">
+          <h1 className=" font-bold ">No data yet</h1>
+          <p className="font-semibold text-sm mt-2 mb-2 text-gray-400 ">
+            Add some transactions to see the chart
+          </p>
         </div>
       </div>
     );
